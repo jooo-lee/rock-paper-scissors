@@ -5,20 +5,28 @@ function getComputerChoice() {
     return choices[randInt];
 }
 
-// play a single round of RPS
+// Play a single round of RPS
 function playRound(playerSelection, computerSelection) {
-    // compare playerSelection with computerSelection
-    // if selections are equal => tie
-    // else compare:
-    //      (player = rock, comp = scissors) || (player = scissors, comp = paper) || 
-    //         (player = paper, comp = rock) => player wins
-    //      (player = rock, comp = paper) || (player = scissors, comp = rock) ||
-    //         (player = paper, comp = scissors) => player loses
-    // return result of round as a string
+    // If choices are the same then it's a tie
+    if (playerSelection === computerSelection) return "It's a tie!";
+
+    if (playerSelection === "Rock" && computerSelection === "Scissors" || 
+        playerSelection === "Scissors" && computerSelection === "Paper" ||
+        playerSelection === "Paper" && computerSelection === "Rock") {
+            // Player wins
+            return `You win! ${playerSelection} beats ${computerSelection}!`;
+    } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
+               playerSelection === "Scissors" && computerSelection === "Rock" ||
+               playerSelection === "Paper" && computerSelection === "Scissors") {
+            // Player loses
+            return `You lose! ${computerSelection} beats ${playerSelection}!`;
+    }
 }
 
-// For testing later on
-// const playerSelection = "Rock";
-// const computerSelection = getComputerChoice();
+// Testing
+const playerSelection = "Rock";
+const computerSelection = getComputerChoice();
 
-// console.log(playRound(playerSelection, computerSelection));
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
