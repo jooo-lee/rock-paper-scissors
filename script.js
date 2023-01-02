@@ -5,8 +5,17 @@ function getComputerChoice() {
     return choices[randInt];
 }
 
+// Capitalize first letter of string and have the rest be lowercase
+function capitalizeFirstLetterOnly(string) {
+    let lowerCaseString = string.toLowerCase();
+    return lowerCaseString.charAt(0).toUpperCase() + lowerCaseString.slice(1);
+}
+
 // Play a single round of RPS
 function playRound(playerSelection, computerSelection) {
+    // Make playerSelection case-insensitive
+    playerSelection = capitalizeFirstLetterOnly(playerSelection);
+
     // If choices are the same then it's a tie
     if (playerSelection === computerSelection) return "It's a tie!";
 
@@ -24,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // Testing
-const playerSelection = "Rock";
+const playerSelection = "roCK";
 const computerSelection = getComputerChoice();
 
 console.log(playerSelection);
