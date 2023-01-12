@@ -1,3 +1,15 @@
+// First make it so that when either the rock, paper or scissors btn
+// is pressed, that specific choice is logged to the console
+
+const playerChoices = document.querySelectorAll(".player-choice");
+playerChoices.forEach(btn => btn.addEventListener("click", () => {
+    console.log(btn.dataset.choice);
+}));
+
+
+
+
+
 const choices = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice() {
@@ -30,47 +42,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Play 5 rounds, keep score and report a winner or loser at the end
 function game() {
     let playerCounter = 0;
     let computerCounter = 0;
-    
-    for (let i = 0; i < 5; i++) {
-        let userInput = null;
-        while (userInput !== "Rock" && userInput !== "Paper" && userInput !== "Scissors") {
-            userInput = prompt(`Round ${i + 1}! Choose rock, paper or scissors: `);
-            if (userInput === null) {
-                console.log("You have quit the game.");
-                return;
-            }
-            userInput = capitalizeFirstLetterOnly(userInput); 
-        }
 
-        console.log(`Round ${i + 1}`);
-        let result = playRound(userInput, getComputerChoice());
+    // let result = playRound(userInput, getComputerChoice());
 
-        switch(result) {
-            case "W":
-                playerCounter++;
-                break;
-            case "L":
-                computerCounter++;
-                break;
-            case "T":
-                break;
-            default:
-                console.log("Something went wrong!");
-                break;
-        }
+    // switch(result) {
+    //     case "W":
+    //         playerCounter++;
+    //         break;
+    //     case "L":
+    //         computerCounter++;
+    //         break;
+    //     case "T":
+    //         break;
+    //     default:
+    //         console.log("Something went wrong!");
+    //         break;
+    // }
 
-        console.log(`Player score: ${playerCounter}`);
-        console.log(`Computer score: ${computerCounter}`);
-        console.log("");
-    }
+    // console.log(`Player score: ${playerCounter}`);
+    // console.log(`Computer score: ${computerCounter}`);
+    // console.log("");
 
-    if (playerCounter > computerCounter) console.log("You win!");
-    else if (playerCounter < computerCounter) console.log("You lose!");
-    else console.log("It's a tie!");
+    // if (playerCounter > computerCounter) console.log("You win!");
+    // else if (playerCounter < computerCounter) console.log("You lose!");
+    // else console.log("It's a tie!");
 }
 
-game();
+// game();
