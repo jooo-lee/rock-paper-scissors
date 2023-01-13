@@ -20,20 +20,11 @@ function playRound(e) {
     }
 }
 
-
-
-
-
 const choices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
     let randInt = Math.floor(Math.random() * choices.length);
     return choices[randInt];
-}
-
-function capitalizeFirstLetterOnly(string) {
-    let lowerCaseString = string.toLowerCase();
-    return lowerCaseString.charAt(0).toUpperCase() + lowerCaseString.slice(1);
 }
 
 function game() {
