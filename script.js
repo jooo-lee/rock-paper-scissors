@@ -1,10 +1,24 @@
-// First make it so that when either the rock, paper or scissors btn
-// is pressed, that specific choice is logged to the console
-
 const playerChoices = document.querySelectorAll(".player-choice");
-playerChoices.forEach(btn => btn.addEventListener("click", () => {
-    console.log(btn.dataset.choice);
-}));
+playerChoices.forEach(btn => btn.addEventListener("click", playRound));
+
+function playRound(e) {
+    let playerChoice = capitalizeFirstLetterOnly(e.target.dataset.choice);
+    let computerChoice = getComputerChoice();
+    console.log(`Player chose: ${playerChoice}`);
+    console.log(`Computer chose: ${computerChoice}`);
+
+    if (playerChoice === computerChoice) console.log("T");
+
+    if (playerChoice === "Rock" && computerChoice === "Scissors" || 
+        playerChoice === "Scissors" && computerChoice === "Paper" ||
+        playerChoice === "Paper" && computerChoice === "Rock") {
+            console.log("W");
+    } else if (playerChoice === "Rock" && computerChoice === "Paper" ||
+               playerChoice === "Scissors" && computerChoice === "Rock" ||
+               playerChoice === "Paper" && computerChoice === "Scissors") {
+            console.log("L");
+    }
+}
 
 
 
@@ -21,26 +35,6 @@ function capitalizeFirstLetterOnly(string) {
     let lowerCaseString = string.toLowerCase();
     return lowerCaseString.charAt(0).toUpperCase() + lowerCaseString.slice(1);
 }
-
-// function playRound(playerChoice, computerChoice) {
-//     // Make player input case-insensitive
-//     playerChoice = capitalizeFirstLetterOnly(playerChoice);
-    
-//     console.log(`Player chose: ${playerChoice}`);
-//     console.log(`Computer chose: ${computerChoice}`);
-
-//     if (playerChoice === computerChoice) return "T";
-
-//     if (playerChoice === "Rock" && computerChoice === "Scissors" || 
-//         playerChoice === "Scissors" && computerChoice === "Paper" ||
-//         playerChoice === "Paper" && computerChoice === "Rock") {
-//             return "W";
-//     } else if (playerChoice === "Rock" && computerChoice === "Paper" ||
-//                playerChoice === "Scissors" && computerChoice === "Rock" ||
-//                playerChoice === "Paper" && computerChoice === "Scissors") {
-//             return "L";
-//     }
-// }
 
 function game() {
     let playerCounter = 0;
