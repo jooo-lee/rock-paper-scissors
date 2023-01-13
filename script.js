@@ -22,25 +22,25 @@ function capitalizeFirstLetterOnly(string) {
     return lowerCaseString.charAt(0).toUpperCase() + lowerCaseString.slice(1);
 }
 
-function playRound(playerSelection, computerSelection) {
-    // Make player input case-insensitive
-    playerSelection = capitalizeFirstLetterOnly(playerSelection);
+// function playRound(playerChoice, computerChoice) {
+//     // Make player input case-insensitive
+//     playerChoice = capitalizeFirstLetterOnly(playerChoice);
     
-    console.log(`Player chose: ${playerSelection}`);
-    console.log(`Computer chose: ${computerSelection}`);
+//     console.log(`Player chose: ${playerChoice}`);
+//     console.log(`Computer chose: ${computerChoice}`);
 
-    if (playerSelection === computerSelection) return "T";
+//     if (playerChoice === computerChoice) return "T";
 
-    if (playerSelection === "Rock" && computerSelection === "Scissors" || 
-        playerSelection === "Scissors" && computerSelection === "Paper" ||
-        playerSelection === "Paper" && computerSelection === "Rock") {
-            return "W";
-    } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
-               playerSelection === "Scissors" && computerSelection === "Rock" ||
-               playerSelection === "Paper" && computerSelection === "Scissors") {
-            return "L";
-    }
-}
+//     if (playerChoice === "Rock" && computerChoice === "Scissors" || 
+//         playerChoice === "Scissors" && computerChoice === "Paper" ||
+//         playerChoice === "Paper" && computerChoice === "Rock") {
+//             return "W";
+//     } else if (playerChoice === "Rock" && computerChoice === "Paper" ||
+//                playerChoice === "Scissors" && computerChoice === "Rock" ||
+//                playerChoice === "Paper" && computerChoice === "Scissors") {
+//             return "L";
+//     }
+// }
 
 function game() {
     let playerCounter = 0;
