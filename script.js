@@ -2,20 +2,20 @@ const playerChoices = document.querySelectorAll(".player-choice");
 playerChoices.forEach(btn => btn.addEventListener("click", playRound));
 
 function playRound(e) {
-    let playerChoice = capitalizeFirstLetterOnly(e.target.dataset.choice);
+    let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
     console.log(`Player chose: ${playerChoice}`);
     console.log(`Computer chose: ${computerChoice}`);
 
     if (playerChoice === computerChoice) console.log("T");
 
-    if (playerChoice === "Rock" && computerChoice === "Scissors" || 
-        playerChoice === "Scissors" && computerChoice === "Paper" ||
-        playerChoice === "Paper" && computerChoice === "Rock") {
+    if (playerChoice === "rock" && computerChoice === "scissors" || 
+        playerChoice === "scissors" && computerChoice === "paper" ||
+        playerChoice === "paper" && computerChoice === "rock") {
             console.log("W");
-    } else if (playerChoice === "Rock" && computerChoice === "Paper" ||
-               playerChoice === "Scissors" && computerChoice === "Rock" ||
-               playerChoice === "Paper" && computerChoice === "Scissors") {
+    } else if (playerChoice === "rock" && computerChoice === "paper" ||
+               playerChoice === "scissors" && computerChoice === "rock" ||
+               playerChoice === "paper" && computerChoice === "scissors") {
             console.log("L");
     }
 }
@@ -24,7 +24,7 @@ function playRound(e) {
 
 
 
-const choices = ["Rock", "Paper", "Scissors"];
+const choices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
     let randInt = Math.floor(Math.random() * choices.length);
