@@ -1,15 +1,27 @@
 // display results
 // 1. create div that shows result of round - DONE
-// 2. display running score
+// 2. display running score - DONE
 // 3. display winner when 5 points reached by one side
-const playerChoiceParagraph = document.querySelector("#player-choice");
-const computerChoiceParagraph = document.querySelector("#computer-choice");
-const resultParagraph = document.querySelector("#result");
+let playerCounter = 0;
+let computerCounter = 0;
+
+const choices = ["rock", "paper", "scissors"];
+
+function getComputerChoice() {
+    let randInt = Math.floor(Math.random() * choices.length);
+    return choices[randInt];
+}
 
 const choiceBtns = document.querySelectorAll(".choice-btns");
 choiceBtns.forEach(btn => btn.addEventListener("click", playRound));
 
 function playRound(e) {
+    const playerChoiceParagraph = document.querySelector("#player-choice");
+    const computerChoiceParagraph = document.querySelector("#computer-choice");
+    const resultParagraph = document.querySelector("#result");
+    const playerScore = document.querySelector("#player-score");
+    const computerScore = document.querySelector("#computer-score");
+
     let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
 
@@ -21,25 +33,20 @@ function playRound(e) {
     if (playerChoice === "rock" && computerChoice === "scissors" || 
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock") {
+            playerCounter++;
             resultParagraph.textContent = "W";
     } else if (playerChoice === "rock" && computerChoice === "paper" ||
                playerChoice === "scissors" && computerChoice === "rock" ||
                playerChoice === "paper" && computerChoice === "scissors") {
+                computerCounter++;
                 resultParagraph.textContent = "L";
     }
-}
 
-const choices = ["rock", "paper", "scissors"];
-
-function getComputerChoice() {
-    let randInt = Math.floor(Math.random() * choices.length);
-    return choices[randInt];
+    playerScore.textContent = `Player score: ${playerCounter}`;
+    computerScore.textContent = `Computer score: ${computerCounter}`;
 }
 
 function game() {
-    let playerCounter = 0;
-    let computerCounter = 0;
-
     // let result = playRound(userInput, getComputerChoice());
 
     // switch(result) {
