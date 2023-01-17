@@ -1,22 +1,31 @@
-const playerChoices = document.querySelectorAll(".player-choice");
-playerChoices.forEach(btn => btn.addEventListener("click", playRound));
+// display results
+// 1. create div that shows result of round - DONE
+// 2. display running score
+// 3. display winner when 5 points reached by one side
+const playerChoiceParagraph = document.querySelector("#player-choice");
+const computerChoiceParagraph = document.querySelector("#computer-choice");
+const resultParagraph = document.querySelector("#result");
+
+const choiceBtns = document.querySelectorAll(".choice-btns");
+choiceBtns.forEach(btn => btn.addEventListener("click", playRound));
 
 function playRound(e) {
     let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
-    console.log(`Player chose: ${playerChoice}`);
-    console.log(`Computer chose: ${computerChoice}`);
 
-    if (playerChoice === computerChoice) console.log("T");
+    playerChoiceParagraph.textContent = `Player chose: ${playerChoice}`;
+    computerChoiceParagraph.textContent = `Computer chose: ${computerChoice}`;
+
+    if (playerChoice === computerChoice) resultParagraph.textContent = "T";
 
     if (playerChoice === "rock" && computerChoice === "scissors" || 
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock") {
-            console.log("W");
+            resultParagraph.textContent = "W";
     } else if (playerChoice === "rock" && computerChoice === "paper" ||
                playerChoice === "scissors" && computerChoice === "rock" ||
                playerChoice === "paper" && computerChoice === "scissors") {
-            console.log("L");
+                resultParagraph.textContent = "L";
     }
 }
 
