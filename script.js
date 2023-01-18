@@ -27,6 +27,7 @@ function playRound(e) {
     display("#player-score", `Player score: ${playerCounter}`);
     display("#computer-score", `Computer score: ${computerCounter}`);
 
+    // Game ends when one player reaches 5 points
     if (playerCounter === 5 || computerCounter === 5) {
         let winner = (playerCounter === 5) ? "Player" : "Computer";
         gameOver(winner);
@@ -36,6 +37,7 @@ function playRound(e) {
 function gameOver(winner) {
     display("#winner", `Winner is: ${winner}!`);
     const choiceBtns = document.querySelectorAll(".choice-btns");
+    // Stop player from continuing game
     choiceBtns.forEach(btn => btn.removeEventListener("click", playRound));
 }
 
