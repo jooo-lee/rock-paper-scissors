@@ -1,3 +1,6 @@
+// also need to think about structure, maybe want to have playRound somehow "inside" of game()? along with score counters
+// so i can also reset game 
+
 // display results
 // 1. create div that shows result of round - DONE
 // 2. display running score - DONE
@@ -16,34 +19,32 @@ const choiceBtns = document.querySelectorAll(".choice-btns");
 choiceBtns.forEach(btn => btn.addEventListener("click", playRound));
 
 function playRound(e) {
-    const playerChoiceParagraph = document.querySelector("#player-choice");
-    const computerChoiceParagraph = document.querySelector("#computer-choice");
-    const resultParagraph = document.querySelector("#result");
-    const playerScore = document.querySelector("#player-score");
-    const computerScore = document.querySelector("#computer-score");
-
     let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
 
-    playerChoiceParagraph.textContent = `Player chose: ${playerChoice}`;
-    computerChoiceParagraph.textContent = `Computer chose: ${computerChoice}`;
+    display("#player-choice", `Player chose: ${playerChoice}`);
+    display("#computer-choice", `Computer chose: ${computerChoice}`)
 
-    if (playerChoice === computerChoice) resultParagraph.textContent = "T";
+    if (playerChoice === computerChoice) display("#result", "T");
 
     if (playerChoice === "rock" && computerChoice === "scissors" || 
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock") {
             playerCounter++;
-            resultParagraph.textContent = "W";
+            display("#result", "W");
     } else if (playerChoice === "rock" && computerChoice === "paper" ||
                playerChoice === "scissors" && computerChoice === "rock" ||
                playerChoice === "paper" && computerChoice === "scissors") {
                 computerCounter++;
-                resultParagraph.textContent = "L";
+                display("#result", "L");
     }
 
-    playerScore.textContent = `Player score: ${playerCounter}`;
-    computerScore.textContent = `Computer score: ${computerCounter}`;
+    display("#player-score", `Player score: ${playerCounter}`);
+    display("#computer-score", `Computer score: ${computerCounter}`);
+}
+
+function display(paragraphID, text) {
+    document.querySelector(paragraphID).textContent = text;
 }
 
 function game() {
