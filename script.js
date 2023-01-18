@@ -3,11 +3,6 @@ let computerCounter;
 
 const choices = ["rock", "paper", "scissors"];
 
-function getComputerChoice() {
-    let randInt = Math.floor(Math.random() * choices.length);
-    return choices[randInt];
-}
-
 function playRound(e) {
     let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
@@ -38,12 +33,8 @@ function playRound(e) {
     }
 }
 
-function display(paragraphID, text) {
-    document.querySelector(paragraphID).textContent = text;
-}
-
 function gameOver(winner) {
-    document.querySelector("#winner").textContent = `Winner is: ${winner}!`;
+    display("#winner", `Winner is: ${winner}!`);
     const choiceBtns = document.querySelectorAll(".choice-btns");
     choiceBtns.forEach(btn => btn.removeEventListener("click", playRound));
 }
@@ -57,3 +48,13 @@ function game() {
 }
 
 game();
+
+// Below are helper functions
+function getComputerChoice() {
+    let randInt = Math.floor(Math.random() * choices.length);
+    return choices[randInt];
+}
+
+function display(paragraphID, text) {
+    document.querySelector(paragraphID).textContent = text;
+}
