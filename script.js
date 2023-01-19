@@ -36,17 +36,17 @@ function playRound(e) {
 
 function gameOver(winner) {
     display("#winner", `Winner is: ${winner}!`);
-    const choiceBtns = document.querySelectorAll(".choice-btns");
+    const playerBtns = document.querySelectorAll(".player-btns");
     // Stop player from continuing game
-    choiceBtns.forEach(btn => btn.removeEventListener("click", playRound));
+    playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
 }
 
 function game() {
     playerCounter = 0;
     computerCounter = 0;
 
-    const choiceBtns = document.querySelectorAll(".choice-btns");
-    choiceBtns.forEach(btn => btn.addEventListener("click", playRound));
+    const playerBtns = document.querySelectorAll(".player-btns");
+    playerBtns.forEach(btn => btn.addEventListener("click", playRound));
 }
 
 game();
