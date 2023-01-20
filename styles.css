@@ -49,3 +49,10 @@ button {
     color: rgb(153, 153, 153);
     border-color: rgb(153, 153, 153);
 }
+
+#player-identifiers {
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+}

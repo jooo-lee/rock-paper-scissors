@@ -16,18 +16,14 @@ function playRound(e) {
     display("#player-choice", `Player chose: ${playerChoice}`);
     display("#computer-choice", `Computer chose: ${computerChoice}`);
 
-    // if (playerChoice === computerChoice) display("#result", "T");
-
     if (playerChoice === "rock" && computerChoice === "scissors" || 
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock") {
             playerCounter++;
-            // display("#result", "W");
     } else if (playerChoice === "rock" && computerChoice === "paper" ||
                playerChoice === "scissors" && computerChoice === "rock" ||
                playerChoice === "paper" && computerChoice === "scissors") {
                 computerCounter++;
-                // display("#result", "L");
     }
 
     display("#player-score", `Player score: ${playerCounter}`);
