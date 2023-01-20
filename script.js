@@ -3,6 +3,11 @@ let computerCounter;
 
 const choices = ["rock", "paper", "scissors"];
 
+const map = new Map();
+map.set("rock", "🪨");
+map.set("paper", "📄");
+map.set("scissors", "✂️");
+
 display("#player-choice", "Player chose: ");
 display("#computer-choice", "Computer chose: ");
 display("#player-score", "Player score: ");
@@ -13,18 +18,18 @@ function playRound(e) {
     let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
 
-    display("#player-choice", `Player chose: ${playerChoice}`);
-    display("#computer-choice", `Computer chose: ${computerChoice}`);
-
     if (playerChoice === "rock" && computerChoice === "scissors" || 
-        playerChoice === "scissors" && computerChoice === "paper" ||
-        playerChoice === "paper" && computerChoice === "rock") {
-            playerCounter++;
+    playerChoice === "scissors" && computerChoice === "paper" ||
+    playerChoice === "paper" && computerChoice === "rock") {
+        playerCounter++;
     } else if (playerChoice === "rock" && computerChoice === "paper" ||
-               playerChoice === "scissors" && computerChoice === "rock" ||
-               playerChoice === "paper" && computerChoice === "scissors") {
-                computerCounter++;
+    playerChoice === "scissors" && computerChoice === "rock" ||
+    playerChoice === "paper" && computerChoice === "scissors") {
+        computerCounter++;
     }
+    
+    display("#player-choice", `Player chose: ${map.get(playerChoice)}`);
+    display("#computer-choice", `Computer chose: ${map.get(computerChoice)}`);
 
     display("#player-score", `Player score: ${playerCounter}`);
     display("#computer-score", `Computer score: ${computerCounter}`);
