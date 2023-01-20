@@ -3,25 +3,31 @@ let computerCounter;
 
 const choices = ["rock", "paper", "scissors"];
 
+display("#player-choice", "Player chose: ");
+display("#computer-choice", "Computer chose: ");
+display("#player-score", "Player score: ");
+display("#computer-score", "Computer score: ");
+display("#winner", "Winner: ");
+
 function playRound(e) {
     let playerChoice = e.target.dataset.choice;
     let computerChoice = getComputerChoice();
 
     display("#player-choice", `Player chose: ${playerChoice}`);
-    display("#computer-choice", `Computer chose: ${computerChoice}`)
+    display("#computer-choice", `Computer chose: ${computerChoice}`);
 
-    if (playerChoice === computerChoice) display("#result", "T");
+    // if (playerChoice === computerChoice) display("#result", "T");
 
     if (playerChoice === "rock" && computerChoice === "scissors" || 
         playerChoice === "scissors" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "rock") {
             playerCounter++;
-            display("#result", "W");
+            // display("#result", "W");
     } else if (playerChoice === "rock" && computerChoice === "paper" ||
                playerChoice === "scissors" && computerChoice === "rock" ||
                playerChoice === "paper" && computerChoice === "scissors") {
                 computerCounter++;
-                display("#result", "L");
+                // display("#result", "L");
     }
 
     display("#player-score", `Player score: ${playerCounter}`);
