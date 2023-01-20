@@ -8,10 +8,10 @@ map.set("rock", "🪨");
 map.set("paper", "📄");
 map.set("scissors", "✂️");
 
-display("#player-choice", "Player chose: ");
-display("#computer-choice", "Computer chose: ");
-display("#player-score", "Player score: ");
-display("#computer-score", "Computer score: ");
+display("#player-choice", "⚔️");
+display("#computer-choice", "⚔️");
+display("#player-score", "Score: 0");
+display("#computer-score", "Score: 0");
 display("#winner", "Winner: ");
 
 function playRound(e) {
@@ -28,11 +28,11 @@ function playRound(e) {
         computerCounter++;
     }
     
-    display("#player-choice", `Player chose: ${map.get(playerChoice)}`);
-    display("#computer-choice", `Computer chose: ${map.get(computerChoice)}`);
+    display("#player-choice", `${map.get(playerChoice)}`);
+    display("#computer-choice", `${map.get(computerChoice)}`);
 
-    display("#player-score", `Player score: ${playerCounter}`);
-    display("#computer-score", `Computer score: ${computerCounter}`);
+    display("#player-score", `Score: ${playerCounter}`);
+    display("#computer-score", `Score: ${computerCounter}`);
 
     // Game ends when one player reaches 5 points
     if (playerCounter === 5 || computerCounter === 5) {
