@@ -7,6 +7,7 @@ html, body {
     background-color: rgb(255, 255, 255);
     font-family: Helvetica;
     height: 100%;
+    color:rgb(219, 0, 0);
 }
 
 #container {
@@ -27,6 +28,9 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 5em;
+    border: 2px solid rgb(219, 0, 0);
+    border-radius: 8px;
 }
 
 #results-container {
@@ -52,9 +56,7 @@ button {
     border-color: rgb(153, 153, 153);
 }
 
-#player-identifiers {
+#player-id, #computer-id {
     font-size: 70px;
-    display: flex;
-    justify-content: center;
-    gap: 8em;
+    margin: 0;
 }
