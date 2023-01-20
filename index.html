@@ -7,30 +7,30 @@
     </head>
     <body>
         <div id="container">
-            <div id="player-identifiers">
-                <p id="player-id">😎</p>
-                <p id="computer-id">🤖</p>
-            </div>
-            <div id="btns-container">
-                <div id="player-btns-container">
-                    <button data-choice="rock" class="player-btns">Rock</button>
-                    <button data-choice="paper" class="player-btns">Paper</button>
-                    <button data-choice="scissors" class="player-btns">Scissors</button>
+            <div id="cards-container">
+                <div id="player-card">
+                    <p id="player-id">😎</p>
+                    <div id="player-btns-container">
+                        <button data-choice="rock" class="player-btns">Rock</button>
+                        <button data-choice="paper" class="player-btns">Paper</button>
+                        <button data-choice="scissors" class="player-btns">Scissors</button>
+                    </div>
+                    <div id="player-choice-score">
+                        <p id="player-choice"></p>
+                        <p id="player-score"></p>
+                    </div>
                 </div>
-                <div id="computer-btns-container">
-                    <button>Rock</button>
-                    <button>Paper</button>
-                    <button>Scissors</button>
-                </div>
-            </div>
-            <div id="choice-score-container">
-                <div id="player-choice-score">
-                    <p id="player-choice"></p>
-                    <p id="player-score"></p>
-                </div>
-                <div id="computer-choice-score">
-                    <p id="computer-choice"></p>
-                    <p id="computer-score"></p>
+                <div id="computer-card">
+                    <p id="computer-id">🤖</p>
+                    <div id="computer-btns-container">
+                        <button>Rock</button>
+                        <button>Paper</button>
+                        <button>Scissors</button>
+                    </div>
+                    <div id="computer-choice-score">
+                        <p id="computer-choice"></p>
+                        <p id="computer-score"></p>
+                    </div>
                 </div>
             </div>
             <div id="results-container">
