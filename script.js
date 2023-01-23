@@ -45,6 +45,7 @@ function gameOver(winner) {
     const playerBtns = document.querySelectorAll(".player-btns");
     // Stop player from continuing game
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
+    playerBtns.forEach(btn => btn.removeEventListener("click", playSound));
 }
 
 function game() {
@@ -53,6 +54,7 @@ function game() {
 
     const playerBtns = document.querySelectorAll(".player-btns");
     playerBtns.forEach(btn => btn.addEventListener("click", playRound));
+    playerBtns.forEach(btn => btn.addEventListener("click", playSound));
 }
 
 game();
@@ -65,4 +67,10 @@ function getComputerChoice() {
 
 function display(paragraphID, text) {
     document.querySelector(paragraphID).textContent = text;
+}
+
+function playSound(e) {
+    const audio = document.querySelector("#btn-click");
+    audio.currentTime = 0;
+    audio.play();
 }
