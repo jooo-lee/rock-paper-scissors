@@ -46,6 +46,8 @@ function gameOver(winner) {
     // Stop player from continuing game
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
     playerBtns.forEach(btn => btn.removeEventListener("click", playSound));
+    display("#player-choice", "GAME OVER");
+    display("#computer-choice", "GAME OVER");
 }
 
 function game() {
