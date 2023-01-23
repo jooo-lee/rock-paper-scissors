@@ -12,7 +12,6 @@ display("#player-choice", "⚔️");
 display("#computer-choice", "⚔️");
 display("#player-score", "Score: 0");
 display("#computer-score", "Score: 0");
-display("#winner", "Winner: ");
 
 function playRound(e) {
     let playerChoice = e.target.dataset.choice;
@@ -42,7 +41,7 @@ function playRound(e) {
 }
 
 function gameOver(winner) {
-    display("#winner", `Winner is: ${winner}!`);
+    display("#winner", `${winner}`);
     const playerBtns = document.querySelectorAll(".player-btns");
     // Stop player from continuing game
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
