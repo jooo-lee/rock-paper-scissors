@@ -41,7 +41,7 @@ function playRound(e) {
 }
 
 function gameOver(winner) {
-    display("#winner", `${winner}`);
+    display("#winner-placeholder", `${winner}`);
     const playerBtns = document.querySelectorAll(".player-btns");
     // Stop player from continuing game
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
