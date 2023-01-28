@@ -42,12 +42,29 @@ function playRound(e) {
 
 function gameOver(winner) {
     display("#winner-placeholder", `${winner}`);
-    const playerBtns = document.querySelectorAll(".player-btns");
+
     // Stop player from continuing game
+    const playerBtns = document.querySelectorAll(".player-btns");
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
     playerBtns.forEach(btn => btn.removeEventListener("click", playSound));
+
     display("#player-choice", "GAME OVER");
     display("#computer-choice", "GAME OVER");
+
+    // Play again button
+    const resultsContainer = document.querySelector("#results-container");
+    const playAgainBtn = document.createElement("button");
+    const playAgainText = document.createTextNode("PLAY AGAIN");
+    playAgainBtn.appendChild(playAgainText);
+    playAgainBtn.classList.add("btn-hover");
+    // playAgainBtn.style
+
+    const refreshPage = () => {
+        location.reload();
+    }
+    playAgainBtn.addEventListener("click", refreshPage);
+
+    resultsContainer.appendChild(playAgainBtn);
 }
 
 function game() {

@@ -11,10 +11,14 @@ html, body {
     justify-content: center;
 }
 
-#page-title {
+#header {
     display: flex;
     justify-content: center;
     font-size: 40px;
+}
+
+#header-text {
+    margin: 30px;
 }
 
 #player-btns-container, #computer-btns-container {
@@ -49,6 +53,10 @@ html, body {
     font-size: 25px;
 }
 
+#winner-text {
+    margin-bottom: 15px;
+}
+
 #winner-placeholder {
     margin-top: 0;
     font-size: 20px;
@@ -65,7 +73,7 @@ button {
     margin: 5px;
 }
 
-.player-btns:hover {
+.btn-hover:hover {
     cursor: pointer;
     border-color: rgb(153, 153, 153);
     transform: scale(1.1);
