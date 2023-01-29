@@ -27,6 +27,10 @@ function playRound(e) {
         computerCounter++;
     }
     
+    // Play animation when computer makes choice
+    const computerChoiceBtn = document.querySelector(`#computer-${computerChoice}`);
+    computerChoiceBtn.classList.add("animate-computer-btn");
+
     display("#player-choice", `${map.get(playerChoice)}`);
     display("#computer-choice", `${map.get(computerChoice)}`);
 
@@ -39,6 +43,10 @@ function playRound(e) {
         gameOver(winner);
     }
 }
+
+// Reset computer choice button animation
+const computerChoiceBtns = document.querySelectorAll(".computer-btns");
+computerChoiceBtns.forEach(btn => btn.addEventListener("transitionend", removeTransition));
 
 function gameOver(winner) {
     display("#winner-placeholder", `${winner}`);
@@ -94,4 +102,8 @@ function playSound(e) {
     const audio = document.querySelector("#btn-click");
     audio.currentTime = 0;
     audio.play();
+}
+
+function removeTransition() {
+    this.classList.remove("animate-computer-btn");
 }

@@ -88,3 +88,14 @@ button {
 #player-choice, #computer-choice {
     font-size: 30px;
 }
+
+.computer-btns {
+    border-color: rgb(219, 0, 0);
+    scale: 1;
+    transition: all 0.3s;
+}
+
+.animate-computer-btn {
+    border-color: rgb(153, 153, 153);
+    scale: 1.1;
+}
