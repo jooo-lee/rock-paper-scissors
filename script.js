@@ -51,6 +51,16 @@ computerChoiceBtns.forEach(btn => btn.addEventListener("transitionend", removeTr
 function gameOver(winner) {
     display("#winner-placeholder", `${winner}`);
 
+    if (winner === "Player") {
+        const audio = document.querySelector("#winning-music");
+        audio.volume = 0.25;
+        audio.play();
+    } else {
+        const audio = document.querySelector("#losing-music");
+        audio.volume = 0.25;
+        audio.play();
+    }
+
     // Stop player from continuing game
     const playerBtns = document.querySelectorAll(".player-btns");
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
@@ -101,6 +111,7 @@ function display(paragraphID, text) {
 function playSound(e) {
     const audio = document.querySelector("#btn-click");
     audio.currentTime = 0;
+    audio.volume = 0.2;
     audio.play();
 }
 
