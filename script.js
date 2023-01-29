@@ -48,6 +48,9 @@ function gameOver(winner) {
     playerBtns.forEach(btn => btn.removeEventListener("click", playRound));
     playerBtns.forEach(btn => btn.removeEventListener("click", playSound));
 
+    // Stop hover effect on player buttons
+    playerBtns.forEach(btn => btn.classList.remove("btn-hover"));
+
     display("#player-choice", "GAME OVER");
     display("#computer-choice", "GAME OVER");
 
@@ -57,7 +60,6 @@ function gameOver(winner) {
     const playAgainText = document.createTextNode("PLAY AGAIN");
     playAgainBtn.appendChild(playAgainText);
     playAgainBtn.classList.add("btn-hover");
-    // playAgainBtn.style
 
     const refreshPage = () => {
         location.reload();

@@ -76,6 +76,7 @@ button {
 .btn-hover:hover {
     cursor: pointer;
     border-color: rgb(153, 153, 153);
+    color: rgb(153, 153, 153);
     transform: scale(1.1);
 }
 
