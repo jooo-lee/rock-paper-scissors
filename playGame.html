@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors!</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <p id="header-text">FIGHT!</p>
+            </header>
+            <div id="cards-container">
+                <div id="player-card">
+                    <p id="player-id">😎</p>
+                    <div id="player-btns-container">
+                        <button data-choice="rock" class="player-btns btn-hover">🪨</button>
+                        <button data-choice="paper" class="player-btns btn-hover">📄</button>
+                        <button data-choice="scissors" class="player-btns btn-hover">✂️</button>
+                    </div>
+                    <p id="player-choice"></p>
+                    <p id="player-score"></p>
+                </div>
+                <div id="computer-card">
+                    <p id="computer-id">🤖</p>
+                    <div id="computer-btns-container">
+                        <button id="computer-rock" class="computer-btns">🪨</button>
+                        <button id="computer-paper" class="computer-btns">📄</button>
+                        <button id="computer-scissors" class="computer-btns">✂️</button>
+                    </div>
+                    <p id="computer-choice"></p>
+                    <p id="computer-score"></p>
+                </div>
+            </div>
+            <div id="results-container">
+                <p id="winner-text">Winner:</p>
+                <p id="winner-placeholder">______</p>
+            </div>
+        </div>
+        <audio id="btn-click" src="btnClick.mp3"></audio>
+        <audio id="winning-music" src="bruh.mp3"></audio>
+        <audio id="losing-music" src="madWorld.mp3"></audio>
+        <script src="script.js" defer></script>
+    </body>
+</html>
