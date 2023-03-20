@@ -8,6 +8,8 @@ The player plays against the computer, with the winner being the first one to 5 
 
 I first built a version of the game which was played in the browser console and then later on I added a UI so that the game could be played in the browser.
 
+![demo image](./demo-img.png)
+
 ## I learned how to:
 
 * Randomly select an element from an array
@@ -17,3 +19,8 @@ I first built a version of the game which was played in the browser console and 
 * Make the web page mobile friendly
 * Wrap elements when the window is resized
 * Dynamically manipulate the DOM
+
+## Songs used:
+
+* "bruh" by jump man 93
+* "Mad World" by Michael Andrews

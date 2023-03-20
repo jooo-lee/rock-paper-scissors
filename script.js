@@ -52,11 +52,11 @@ function gameOver(winner) {
     display("#winner-placeholder", `${winner}`);
 
     if (winner === "Player") {
-        const audio = document.querySelector("#winning-music");
+        const audio = document.querySelector("#winning-music"); // Song: "bruh" by jump man 93
         audio.volume = 0.25;
         audio.play();
     } else {
-        const audio = document.querySelector("#losing-music");
+        const audio = document.querySelector("#losing-music"); // Song: "Mad World" by Michael Andrews
         audio.volume = 0.25;
         audio.play();
     }
